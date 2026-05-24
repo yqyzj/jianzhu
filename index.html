@@ -394,7 +394,7 @@
   .float-btn{
    display:flex;align-items:center;gap:0;color:#fff;cursor:pointer;
    box-shadow:var(--shadow-hover);transition:all 0.3s var(--ease-out);border:none;
-   text-decoration:none;font-family:inherit;overflow:hidden;
+   text-decoration:none;font-family:inherit;overflow:hidden;border-radius:27px;
   }
   .float-btn-icon{
    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
@@ -402,18 +402,14 @@
   }
   .float-btn-text{
    font-size:14px;font-weight:700;white-space:nowrap;
-   opacity:0;width:0;overflow:hidden;transition:all 0.3s var(--ease-out);padding-right:16px;
+   opacity:0;width:0;overflow:hidden;transition:all 0.3s var(--ease-out);padding-right:16px;padding-left:4px;
+   display:flex;align-items:center;
   }
   .float-item:hover .float-btn-text{opacity:1;width:auto;overflow:visible;}
   .float-item:hover .float-btn-icon{border-radius:27px 0 0 27px;}
-  .float-tel .float-btn-icon{background:var(--accent);}
-  .float-wx .float-btn-icon{background:#d4870a;}
-  .float-tip{
-   position:absolute;right:66px;background:#241b13;color:#fff;padding:9px 15px;
-   border-radius:9px;font-size:12px;white-space:nowrap;opacity:0;
-   transition:opacity 0.2s;pointer-events:none;font-family:inherit;
-  }
-  .float-item:hover .float-tip{opacity:0;}
+  .float-tel .float-btn-icon,.float-tel .float-btn-text{background:var(--accent);}
+  .float-wx .float-btn-icon,.float-wx .float-btn-text{background:#d4870a;}
+
 
   /* ── ANIMATIONS ── */
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
@@ -888,7 +884,7 @@
    <h2 class="section-title">联系我们</h2>
   </div>
   <div class="map-box">
-   <iframe src="https://uri.amap.com/search?word=永州愿景国际广场B座&src=mypage&qfrom=jianzhu" allowfullscreen></iframe>
+   <iframe src="https://lbs.qq.com/myMap/iframe?keyword=%E6%B0%B8%E5%B7%9E%E6%84%BF%E6%99%AF%E5%9B%BD%E9%99%85%E5%B9%BF%E5%9C%BAB%E5%BA%A7&key=56DBZ-RPJC4-JEMUF-K45CG-H7J27-CAF46&referer=jianzhu&zoom=15" allowfullscreen></iframe>
    <div class="map-overlay">
     <h4>湖南资质服务网</h4>
     <p>地址：永州愿景国际广场B座<br>📞 177-6365-8675</p>
@@ -978,15 +974,19 @@
 <div class="float-btns">
  <div class="float-item">
   <button class="float-btn float-wx" onclick="handleWx()">
-   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.502.877a.272.272 0 00.14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.307-1.168a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.87l-.406-.012zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.969-.982z"/></svg>
+   <div class="float-btn-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.502.877a.272.272 0 00.14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.307-1.168a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.87l-.406-.012zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.969-.982z"/></svg>
+   </div>
+   <div class="float-btn-text">💬 微信咨询</div>
   </button>
-  <div class="float-tip">💬 微信咨询/复制微信号</div>
  </div>
  <div class="float-item">
   <a href="tel:17763658675" class="float-btn float-tel">
-   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+   <div class="float-btn-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+   </div>
+   <div class="float-btn-text">📞 177-6365-8675</div>
   </a>
-  <div class="float-tip">📞 177-6365-8675</div>
  </div>
 </div>
 
